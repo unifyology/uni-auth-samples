@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnifyAuth.Sample.Api", "UnifyAuth.Sample.Api\UnifyAuth.Sample.Api.csproj", "{48BD6B3D-B5DE-4853-98BE-8B2FFCB482F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnifyAuth.Sample.ClientCredentials", "UnifyAuth.Sample.ClientCredentials\UnifyAuth.Sample.ClientCredentials.csproj", "{E34BB9FE-2651-4728-AA9C-725E26D4570E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnifyAuth.Sample.WebMVC", "UnifyAuth.Sample.WebMVC\UnifyAuth.Sample.WebMVC.csproj", "{E4DE6A04-9649-4F20-9763-C66E46BBE147}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48BD6B3D-B5DE-4853-98BE-8B2FFCB482F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BD6B3D-B5DE-4853-98BE-8B2FFCB482F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BD6B3D-B5DE-4853-98BE-8B2FFCB482F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BD6B3D-B5DE-4853-98BE-8B2FFCB482F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E34BB9FE-2651-4728-AA9C-725E26D4570E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34BB9FE-2651-4728-AA9C-725E26D4570E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E34BB9FE-2651-4728-AA9C-725E26D4570E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E34BB9FE-2651-4728-AA9C-725E26D4570E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4DE6A04-9649-4F20-9763-C66E46BBE147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DE6A04-9649-4F20-9763-C66E46BBE147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DE6A04-9649-4F20-9763-C66E46BBE147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DE6A04-9649-4F20-9763-C66E46BBE147}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE8DB610-8119-4F14-B3E4-46CC4CAC3162}
+	EndGlobalSection
+EndGlobal
