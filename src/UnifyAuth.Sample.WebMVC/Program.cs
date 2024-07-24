@@ -20,31 +20,44 @@ namespace UnifyAuth.Sample.WebMVC
             .AddCookie("Cookies")
             .AddOpenIdConnect("oidc", options =>
             {
-                options.Authority = "https://localhost:5001";
+                options.Authority = "http://unifyauth.local";
 
-                options.ClientId = "658c6886-d800-4c07-a384-c5d4c1bf522d";
-                options.ClientSecret = "VexkBCJdSnglPez60oAFY1uHIv5gCzulwxIIrJ9o63g=";
+                options.ClientId = "b0329dd4-c897-48c0-9c8a-579a3514d5e7";
+                options.ClientSecret = "uoy_S83y2TcHyQmNjalZ1JGfRkzwNR5wGByF";
                 options.ResponseType = "code";
-
+                options.RequireHttpsMetadata= false;
                 options.Scope.Add("openid profile uniauth_sample_api:weather:read");
 
                 options.SaveTokens = true;
                 // Allowed Callback URLs
-                options.CallbackPath= new PathString("/");
+                //options.CallbackPath = new PathString("/");
+
+                options.NonceCookie.SameSite = SameSiteMode.Unspecified;
+                options.CorrelationCookie.SameSite = SameSiteMode.Unspecified;
             });
 
 
             var app = builder.Build();
+
+            app.UseCookiePolicy(new CookiePolicyOptions
+            {
+                Secure = CookieSecurePolicy.Always
+            });
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            else
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

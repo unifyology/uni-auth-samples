@@ -7,7 +7,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnifyAuth.Sample.Api", "Uni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnifyAuth.Sample.ClientCredentials", "UnifyAuth.Sample.ClientCredentials\UnifyAuth.Sample.ClientCredentials.csproj", "{E34BB9FE-2651-4728-AA9C-725E26D4570E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnifyAuth.Sample.WebMVC", "UnifyAuth.Sample.WebMVC\UnifyAuth.Sample.WebMVC.csproj", "{E4DE6A04-9649-4F20-9763-C66E46BBE147}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnifyAuth.Sample.WebMVC", "UnifyAuth.Sample.WebMVC\UnifyAuth.Sample.WebMVC.csproj", "{E4DE6A04-9649-4F20-9763-C66E46BBE147}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Encryption", "Encryption", "{0A0BED7D-5B32-4FFD-88CD-C8E2A7A0781D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unifyology.Encryption.App", "Unifyology.Encryption.Console\Unifyology.Encryption.App.csproj", "{90B7A504-A5A1-479B-BD04-52E04CAD660A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnifyAuth.Sample.ProxyTest", "UnifyAuth.Sample.ProxyTest\UnifyAuth.Sample.ProxyTest.csproj", "{741E5B20-0B04-41DE-B369-A223D7134DAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapr", "Dapr", "{D4D89F01-E6E5-4C1D-B728-89F2459383E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{3135097A-BB87-41E5-A90C-A1F4ADBAF0AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unifyology.Data.Console", "Unifyology.Data.Console\Unifyology.Data.Console.csproj", "{A6A0F3FE-23B9-47CE-98FC-EF3A6D2388CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +39,25 @@ Global
 		{E4DE6A04-9649-4F20-9763-C66E46BBE147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4DE6A04-9649-4F20-9763-C66E46BBE147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4DE6A04-9649-4F20-9763-C66E46BBE147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B7A504-A5A1-479B-BD04-52E04CAD660A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B7A504-A5A1-479B-BD04-52E04CAD660A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B7A504-A5A1-479B-BD04-52E04CAD660A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B7A504-A5A1-479B-BD04-52E04CAD660A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741E5B20-0B04-41DE-B369-A223D7134DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741E5B20-0B04-41DE-B369-A223D7134DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741E5B20-0B04-41DE-B369-A223D7134DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741E5B20-0B04-41DE-B369-A223D7134DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A0F3FE-23B9-47CE-98FC-EF3A6D2388CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A0F3FE-23B9-47CE-98FC-EF3A6D2388CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A0F3FE-23B9-47CE-98FC-EF3A6D2388CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A0F3FE-23B9-47CE-98FC-EF3A6D2388CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90B7A504-A5A1-479B-BD04-52E04CAD660A} = {0A0BED7D-5B32-4FFD-88CD-C8E2A7A0781D}
+		{A6A0F3FE-23B9-47CE-98FC-EF3A6D2388CA} = {3135097A-BB87-41E5-A90C-A1F4ADBAF0AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE8DB610-8119-4F14-B3E4-46CC4CAC3162}

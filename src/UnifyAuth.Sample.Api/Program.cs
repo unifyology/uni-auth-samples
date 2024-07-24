@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.Resource;
 using Microsoft.IdentityModel.Tokens;
@@ -13,7 +14,7 @@ namespace UnifyAuth.Sample.Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            var authority = "https://localhost:5001";
+            var authority = "http://localhost:5000";
             // Add services to the container.
             builder.Services
                 .AddAuthentication("Bearer")
@@ -23,9 +24,20 @@ namespace UnifyAuth.Sample.Api
 
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateAudience = true
+                        ValidateAudience = true,
+                        RequireExpirationTime = true,
+                        RequireSignedTokens = true,
+                        RequireAudience = true,
+                        SaveSigninToken = false,
+                        TryAllIssuerSigningKeys = true,
+                        ValidateActor = false,
+                        ValidateIssuer = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidateLifetime = true,
+                        ValidateTokenReplay = true,
                     };
                     options.Audience = "uniauth_sample_api";
+                    options.RequireHttpsMetadata = false;
                 });
 
             builder.Services.AddControllers();
@@ -71,21 +83,22 @@ namespace UnifyAuth.Sample.Api
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Weather Api Management");
-                    c.OAuthClientId("5ba247c7-060d-4628-b8f8-941431fa2430");
-                    c.OAuthClientSecret("dc613e80-63c0-471f-81a6-8bf66e18622d");
-                    c.OAuthAppName("Weather Management Api");
-                    c.OAuthUseBasicAuthenticationWithAccessCodeGrant();
-                });
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Weather Api Management");
+                c.OAuthClientId("5ba247c7-060d-4628-b8f8-941431fa2430");
+                c.OAuthClientSecret("dc613e80-63c0-471f-81a6-8bf66e18622d");
+                c.OAuthAppName("Weather Management Api");
+            });
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseAuthentication();
             app.UseAuthorization();
 

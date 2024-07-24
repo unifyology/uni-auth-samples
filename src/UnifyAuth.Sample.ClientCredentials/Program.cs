@@ -11,7 +11,7 @@ namespace UnifyAuth.ClientCredentials.App
             // discover endpoints from metadata
             var client = new HttpClient();
 
-            var disco = await client.GetDiscoveryDocumentAsync("https://localhost:5001");
+            var disco = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
             if (disco.IsError)
             {
                 Console.WriteLine(disco.Error);
@@ -23,8 +23,7 @@ namespace UnifyAuth.ClientCredentials.App
             {
                 Address = disco.TokenEndpoint,
                 ClientId = "693994c7-2918-4882-a8a9-fb271a119201",
-                ClientSecret = "ca84cc02-fef5-4c48-8c3c-4c67716899a6",
-                
+                ClientSecret = "ca84cc02-fef5-4c48-8c3c-4c67716899a6",                
                 Scope = "uniauth_sample_api:weather:read"
             });
 
